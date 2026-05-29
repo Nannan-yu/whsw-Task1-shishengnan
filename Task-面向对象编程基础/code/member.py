@@ -17,6 +17,10 @@ class Member:
     if 0<points<=self.points:
       return True
     return False
+  #自动输出
+  def __str__(self): #返回对象的“字符串表示形式”如果没有print出来的就是地址信息
+    return f"{self.id}\t{self.name}\t{self.group}\t{self.points}"
+    
     
     
   
