@@ -6,4 +6,10 @@ class Member:
     self.points=0
     self.id=f"RM{Member._id:04d}"
     _id+=1
-
+  def add_points(self,points):
+    if points>=0:
+      self.points+=points
+      return True
+    return False
+    
+  
