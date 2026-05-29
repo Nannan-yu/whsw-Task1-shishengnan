@@ -6,10 +6,17 @@ class Member:
     self.points=0
     self.id=f"RM{Member._id:04d}"
     _id+=1
+  #加分
   def add_points(self,points):
     if points>=0:
       self.points+=points
       return True
     return False
+  #减分
+  def cut_points(self,points):
+    if 0<points<=self.points:
+      return True
+    return False
+    
     
   
