@@ -76,12 +76,12 @@ class MemberManager:
       print(f"×，未找到编号 {member_id} 的队员")
       return False
     print(f"⚠ 即将删除：{member.id} {member.name} {member.group} {member.points}分")
-    if self._confirm_deletion():
+    if self.confirm_deletion():
       self.members.remove(member)
       print(f"✔，队员 {member.id} {member.name} 已删除")
       return True
     else:
       print("已取消删除")
       return False
-  def _confirm_deletion(self):
+  def confirm_deletion(self):
     return input("确认删除？(y/n)：").strip().lower() == 'y'
