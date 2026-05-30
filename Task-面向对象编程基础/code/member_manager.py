@@ -45,5 +45,17 @@ class MemberManager:
     if not member:
       print(f"×未找到编号{member_id}的队员")
       return False
-    member.add_
-      
+    member.add_points(points)
+    print(f"✔成功为{member.name}增加了{points}，当前积分为{member.points}")
+  #减分
+  def cut_ponts(self,member_id,points):
+    member=self.find_id(member_id)
+    if not member:
+      print(f"×未找到编号{member_id}的队员")
+      return False
+    member.cut_points(points)
+    print(f"✔成功为{member.name}扣除了{points}，当前积分为{member.points}")  
+  #排名
+  def get_points(self):
+    return m.points
+  return sorted(self.member,key=get_points,reverse=True)
