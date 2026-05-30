@@ -33,4 +33,27 @@ def delete_members(mgr):
   print("\n--- 删除队员 ---")
   member_id = input("请输入要删除的队员编号：").strip()
   mgr.delete_member(member_id)
-
+def main():
+  mgr = MemberManager()
+  while True:
+    print_menu()
+    choice = input("请选择操作 (1-7)：").strip()
+    if choice == '1':
+      add_member(mgr)
+    elif choice == '2':
+      list_member(mgr)
+    elif choice == '3':
+      add_memberpoints(mgr)
+    elif choice == '4':
+      cut_memberpoints(mgr)
+    elif choice == '5':
+      rank_memberpoints(mgr)
+    elif choice == '6':
+      cut_memberpoints(mgr)
+    elif choice == '7':
+      print("感谢使用 RoboMaster 队员积分管理系统，再见！")
+      break
+    else:
+      print("×，无效选择，请输入 1-7 之间的数字！")
+if __name__ == "__main__":
+    main()
