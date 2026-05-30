@@ -33,6 +33,16 @@ class MemberManager:
     print("——"*30)
     for m in self.members:
       print(m)
+  #查找队员
+  def find_id(self,member_id):
+    for m in self.member:
+      if m.id==member.id:
+        return m
+    return False
   #加分
-  def add_ponts
+  def add_ponts(self,member_id,points):
+    member=self.find_id(member_id)
+    if not member:
+      print(f"×未找到编号{member_id}的队员")
+    if
       
