@@ -11,11 +11,17 @@ class Member:
     if points>=0:
       self.points+=points
       return True
+    print("×,加分必须是正整数")
     return False
   #减分
   def cut_points(self,points):
     if 0<points<=self.points:
+      self.points-=points
       return True
+    elif points>self.points:
+      print(f"×,扣分不能超过当前积分，当前积分{self.points}")
+      return False
+    print("×,扣分必须是正整数")
     return False
   #自动输出
   def __str__(self): #返回对象的“字符串表示形式”如果没有print出来的就是地址信息
