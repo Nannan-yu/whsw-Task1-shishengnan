@@ -73,12 +73,12 @@ class MemberManager:
   def delete_member(self, member_id):
     member = self.find_id(member_id)
     if not member:
-      print(f"❌ 未找到编号 {member_id} 的队员")
+      print(f"×，未找到编号 {member_id} 的队员")
       return False
     print(f"⚠ 即将删除：{member.id} {member.name} {member.group} {member.points}分")
     if self._confirm_deletion():
       self.members.remove(member)
-      print(f"✅ 队员 {member.id} {member.name} 已删除")
+      print(f"✔，队员 {member.id} {member.name} 已删除")
       return True
     else:
       print("已取消删除")
