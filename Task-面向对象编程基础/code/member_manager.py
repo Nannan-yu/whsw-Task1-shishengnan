@@ -59,3 +59,29 @@ class MemberManager:
   def get_points(self):
     return m.points
   return sorted(self.member,key=get_points,reverse=True)
+  def show_rankings(self):
+    ranked = self.get_points()
+    if not ranked:
+      print("暂无队员数据")
+      return
+    print("\n积分排行榜")
+    print("排名\t编号\t姓名\t组别\t积分")
+    print("——" * 30)
+    for idx, m in enumerate(ranked, 1):
+      print(f"{idx}\t{m.id}\t{m.name}\t{m.group}\t{m.points}")
+  #删除
+  def delete_member(self, member_id):
+    member = self.find_id(member_id)
+    if not member:
+      print(f"❌ 未找到编号 {member_id} 的队员")
+      return False
+    print(f"⚠ 即将删除：{member.id} {member.name} {member.group} {member.points}分")
+    if self._confirm_deletion():
+      self.members.remove(member)
+      print(f"✅ 队员 {member.id} {member.name} 已删除")
+      return True
+    else:
+      print("已取消删除")
+      return False
+  def _confirm_deletion(self):
+    return input("确认删除？(y/n)：").strip().lower() == 'y'
