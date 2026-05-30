@@ -1,4 +1,4 @@
-class member import 
+class member import Member
 class MemberManager:
   groups=["视觉","电控","机械","运营"]
   def __init__(self):
@@ -20,5 +20,7 @@ def add_member(self,name,group):
   if _jugdename(name):
     print(f"×，队员{name}已存在")
     return False
-  member=
+  member=Member(name,group)
+  self.member.append(member)
+  print(f"✔添加成功！队员编号：{member.__nextid},姓名：{member.name},组别：{member.group},初始加分：{member.points}")
   
