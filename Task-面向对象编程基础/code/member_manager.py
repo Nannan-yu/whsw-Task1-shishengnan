@@ -13,14 +13,26 @@ class MemberManager:
         return True
     return False
   #增加成员
-def add_member(self,name,group):
-  if not _judgegroup(group):#if后面为True则执行
-    print("×，没有这个组")
-    return False
-  if _jugdename(name):
-    print(f"×，队员{name}已存在")
-    return False
-  member=Member(name,group)
-  self.member.append(member)
-  print(f"✔添加成功！队员编号：{member.__nextid},姓名：{member.name},组别：{member.group},初始加分：{member.points}")
-  
+  def add_member(self,name,group):
+    if not _judgegroup(group):#if后面为True则执行
+      print("×，没有这个组")
+      return False
+    if _jugdename(name):
+      print(f"×，队员{name}已存在")
+      return False
+    member=Member(name,group)
+    self.member.append(member)
+    print(f"✔添加成功！队员编号：{member.__nextid},姓名：{member.name},组别：{member.group},初始加分：{member.points}")
+    return True
+  #查看所有队员
+  def all_member(self):
+    if not self.members:
+      print("暂无队员数据")
+      return None
+    print("\n编号\t姓名\t组别\t积分")
+    print("——"*30)
+    for m in self.members:
+      print(m)
+  #加分
+  def add_ponts
+      
