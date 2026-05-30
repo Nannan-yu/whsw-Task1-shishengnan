@@ -44,5 +44,6 @@ class MemberManager:
     member=self.find_id(member_id)
     if not member:
       print(f"×未找到编号{member_id}的队员")
-    if
+      return False
+    member.add_
       
